@@ -1,6 +1,32 @@
     <!-- FOOTER -->
     <footer>
-        
+        <!-- partie1 -->
+       <div class="d-flex justify-content-between bg-secondary">
+            <div>
+                <img src="assets/images/logo-footer.svg" alt="logo-footer">
+            </div>
+            <!-- Links -->
+            <nav class="w-50 d-flex justify-content-around align-items-center" id="nav-bar-footer">
+                <a href="#" class="fs-6 text-light">l'OFPPT</a>
+                <a href="#" class="fs-6 text-light">Découvrir les secteurs</a>
+                <a href="#" class="fs-6 text-light">Explorer les filières</a>
+                <a href="#" class="fs-6 text-light">Foire aux questions</a>
+                <a href="#" class="fs-6 text-light">Trouver un établissement</a>
+            </nav>
+            <!-- Soociel Media -->
+             <nav class="d-flex justify-content-around align-items-center" id="sociel-media">
+                <a href="#" class="icons"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="icons"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="icons"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="icons"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="icons"><i class="bi bi-linkedin"></i></a>
+             </nav>
+       </div>
+
+       <!-- partie2 -->
+       <div>
+
+       </div>
     </footer>
 
     <script src="/MyWay-Console---PHP/assets/js/main.js"></script>
