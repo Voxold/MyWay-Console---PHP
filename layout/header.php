@@ -1,3 +1,10 @@
+<?php
+// initialization session
+session_start();
+
+$authonitication = false;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +20,31 @@
     <header>
         <!-- Header 1 -->
         <div style="background-color: #343434;">
+          <!-- Se Dahsboard-->
+          <?php
+           if ($authonitication) {
+          ?>
+            <div>
+              <a href="dashboard.php">
+                <button class="btn btn-success">
+                  <i class="bi bi-person"></i>Dashboarde
+                </button>
+              </a>
+            </div>
           <!-- Se Connecter -->
+          <?php
+            }else{
+          ?>
           <div>
-            <a href="register.php">
+            <a href="login.php">
               <button class="btn btn-primary">
                 <i class="bi bi-person"></i>Me connecter
               </button>
             </a>
           </div>
+          <?php
+            };
+          ?>
             <!-- Languege -->
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
