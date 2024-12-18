@@ -11,7 +11,16 @@
 <body>
     <!-- HEADER -->
     <header>
-        <div class="bg-secondary">
+        <!-- Header 1 -->
+        <div style="background-color: #343434;">
+          <!-- Se Connecter -->
+          <div>
+            <a href="register.php">
+              <button class="btn btn-primary">
+                <i class="bi bi-person"></i>Me connecter
+              </button>
+            </a>
+          </div>
             <!-- Languege -->
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -23,9 +32,26 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </div>
-
-
         </div>
+        <!-- Header 2 -->
+         <div>
+            <ul>
+                <li>
+                  <span>Apprendre</span>à me connaître
+                </li>
+                <li>
+                  <span>Explorer</span>et découvrir
+                </li>
+                <li>
+                  <span>M'aider</span>à faire mon choix
+                </li>
+                <li>
+                  <a href="register.php">
+                    <button class="btn btn-primary">M’inscrire</button>
+                  </a>
+                </li>
+            </ul>
+         </div>
         <img src="assets/images/logo.jpg" alt="logo">
 
     </header>

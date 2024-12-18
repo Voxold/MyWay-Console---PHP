@@ -1,7 +1,7 @@
     <!-- FOOTER -->
     <footer>
         <!-- partie1 -->
-       <div class="d-flex justify-content-between bg-secondary">
+       <div class="d-flex justify-content-around " style="background-color: #343434;">
             <div>
                 <img src="assets/images/logo-footer.svg" alt="logo-footer">
             </div>
@@ -24,8 +24,13 @@
        </div>
 
        <!-- partie2 -->
-       <div>
-
+       <div class="d-flex justify-content-around" style="background-color: #00A3A6;">
+            <p>© 2024 OFPPT. Tous droits réservés</p>
+            <nav>
+                <a href="#">Plan du site</a>
+                <a href="#">CGU</a>
+                <a href="#">Mentions légales</a>
+            </nav>
        </div>
     </footer>
 
