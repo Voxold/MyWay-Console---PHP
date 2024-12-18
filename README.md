@@ -60,4 +60,4 @@ git push origin feature/your-feature-name
 For any inquiries or support, please contact:  
 
 - **👤 Name:** Bilal Ajaha  
-- **📧 Email:** [bilalajaha@gmail.com](mailto:bilalajaha@gmail.com)  
+- **🔗 LinkedIn:** [linkedin.com/in/bilalajaha](https://www.linkedin.com/in/bilalajaha)
