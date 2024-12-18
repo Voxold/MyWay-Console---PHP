@@ -1,6 +1,6 @@
-# MyWay Console
+# MyWay clone
 
-A console project for [MyWay](https://www.myway.ac.ma) built using PHP, Bootstrap, and JavaScript. This project aims to provide an enhanced and dynamic user experience while maintaining a robust back-end structure.
+A clone project for [MyWay](https://www.myway.ac.ma) built using PHP, Bootstrap, and JavaScript. This project aims to provide an enhanced and dynamic user experience while maintaining a robust back-end structure.
 
 ## Features
 
@@ -20,7 +20,7 @@ A console project for [MyWay](https://www.myway.ac.ma) built using PHP, Bootstra
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/myway-console.git
+   git clone https://github.com/your-username/myway-clone.git
    ```
 
 2. Set up your local server (e.g., XAMPP, WAMP, or MAMP).
@@ -29,7 +29,7 @@ A console project for [MyWay](https://www.myway.ac.ma) built using PHP, Bootstra
 5. Open the project in your browser:
 
 ```bash
-http://localhost/myway-console
+http://localhost/myway-clone
 ```
 
 ## Contributing
