@@ -1,7 +1,7 @@
 <?php
 include('layout/header.php');
 
-$error = false;
+
 
 $civilite = "";
 $nom = "";
@@ -36,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $telephone = $_POST['telephone'];
     $ville = $_POST['ville'];
 }
+
+$error = false;
 
 /*************************** Validate name ***************************/
 if (empty($nom)) {
@@ -77,6 +79,7 @@ if ($confirme_password != $password) {
                 <!-- Field 1 -->
                 <label for="civilite">Civilité</label>
                 <select name="civilite" id="civilite">
+                <option value="" disabled selected>Sélectionner la Civilité</option>
                     <option value="madmoiselle">Madmoiselle</option>
                     <option value="madame">Madame</option>
                     <option value="monsieur">Monsieur</option>
@@ -85,33 +88,33 @@ if ($confirme_password != $password) {
 
                 <!-- Field 2 -->
                 <label for="">Nom</label>
-                <input type="text" name="nom" required>
+                <input type="text" name="nom">
                 <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $nom_error ?></span>
                 
                 <!-- Field 3 -->
                 <label for="">Prenom</label>
-                <input type="text" name="prenom" required>
+                <input type="text" name="prenom">
                 <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $prenom_error ?></span>
 
                 <!-- Field 4 -->
                 <label for="">Date de naissance </label>
-                <input type="date" name="dateNaissance" required>
+                <input type="date" name="dateNaissance">
                 <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $date_naissance_error ?></span>
 
                 <!-- Field 6 -->
                 <label for="telephone">Numéro de téléphone </label>
-                <input type="number" name="telephone" required>
+                <input type="number" name="telephone">
                 <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $telephone_error?></span>
 
                 <!-- Field 7 -->
                 <label for="">Mot de passe </label>
-                <input type="password" name="password" required>
+                <input type="password" name="password">
                 <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $password_error?></span>
 
 
                 <!-- Field 8 -->
                 <label for="">Confirmer le mot de passe </label>
-                <input type="password" name="confirme_password" required>
+                <input type="password" name="confirme_password">
                 <?php 
                     if ($error == true) {
                         echo "<span class='text-danger'><i class='bi bi-exclamation-circle'></i> ";
@@ -124,7 +127,7 @@ if ($confirme_password != $password) {
 
                 <!-- Field 9 -->
                 <label for="">Région</label>
-                <select name="region" id="region" required>
+                <select name="region" id="region">
                     <option value="" disabled selected>Sélectionner la région</option>
                     <option value="tanger-tetouan-al-hoceima">Tanger-Tétouan-Al Hoceïma</option>
                     <option value="oriental">L'Oriental</option>
@@ -143,7 +146,7 @@ if ($confirme_password != $password) {
 
                 <!-- Field 7 -->
                 <label for="city">Ville :</label>
-                <select name="city" id="city" required class="mb-3">
+                <select name="city" id="city" class="mb-3">
                     <option value="" disabled selected>Sélectionner une ville</option>
                 </select>
                 
