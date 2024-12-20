@@ -24,7 +24,7 @@ regionSelect.addEventListener("change", function() {
   const cities = citiesByRegion[selectedRegion] || [];
 
 // Clear previous cities
-citySelect.innerHTML = '<option value="" disabled selected>sélectionner une ville</option>';
+citySelect.innerHTML = '<option value="" disabled selected>Sélectionner une ville</option>';
 
 // Add new cities
 cities.forEach(city => {

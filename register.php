@@ -1,6 +1,8 @@
 <?php
 include('layout/header.php');
 
+$error = false;
+
 $civilite = "";
 $nom = "";
 $prenom = "";
@@ -9,6 +11,8 @@ $region = "";
 $email = "";
 $telephone = "";
 $ville = "";
+$password = "";
+$confirme_password = "";
 
 // ERRORS 
 $civilite_error = "";
@@ -19,6 +23,8 @@ $region_error = "";
 $email_error = "";
 $telephone_error = "";
 $ville_error = "";
+$password_error = "";
+$confirme_password_error = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $civilite = $_POST['civilite'];
@@ -31,20 +37,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ville = $_POST['ville'];
 }
 
-$regions = [
-    "tanger-tetouan-al-hoceima" => ["Tanger", "Tétouan", "Al Hoceïma", "Larache", "Chefchaouen", "Ouezzane"],
-    "oriental" => ["Oujda", "Nador", "Berkane", "Taourirt", "Jerada", "Driouch"],
-    "fes-meknes" => ["Fès", "Meknès", "Ifrane", "Taza", "El Hajeb", "Sefrou"],
-    "rabat-sale-kenitra" => ["Rabat", "Salé", "Kénitra", "Sidi Slimane", "Témara", "Skhirat"],
-    "beni-mellal-khenifra" => ["Béni Mellal", "Khénifra", "Azilal", "Fquih Ben Salah", "Kasba Tadla"],
-    "casablanca-settat" => ["Casablanca", "Settat", "El Jadida", "Berrechid", "Mohammédia", "Mediouna"],
-    "marrakech-safi" => ["Marrakech", "Safi", "Essaouira", "Chichaoua", "Youssoufia"],
-    "draâ-tafilalet" => ["Errachidia", "Ouarzazate", "Zagora", "Tinghir", "Midelt"],
-    "souss-massa" => ["Agadir", "Taroudant", "Tiznit", "Inezgane", "Chtouka Ait Baha"],
-    "guelmim-oued-noun" => ["Guelmim", "Tan-Tan", "Sidi Ifni", "Assa-Zag"],
-    "laayoune-sakia-el-hamra" => ["Laâyoune", "Boujdour", "Tarfaya", "Es-Semara"],
-    "dakhla-oueled-ed-dahab" => ["Dakhla", "Aousserd"]
-];
+/*************************** Validate name ***************************/
+if (empty($nom)) {
+    $nom_error = 'Nom requis';
+    $error = true;
+}
+/*************************** Validate Prenom ***************************/
+if (empty($prenom)) {
+    $prenom_error = 'Prénom requis';
+    $error = true;
+}
+/*************************** Validate Email ***************************/
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $email_error = 'Email non-valide';
+    $error = true;
+}
+/*************************** Validate Telephone ***************************/
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $email_error = 'Email non-valide';
+    $error = true;
+}
+/*************************** Validate Password ***************************/
+if ($confirme_password != $password) {
+    $password_error = 'Le mot de passe ne correspond pas';
+    $confirme_password_error = 'Le mot de passe ne correspond pas';
+    $error = true;
+}
 
 ?>
 
@@ -81,11 +99,30 @@ $regions = [
                 <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $date_naissance_error ?></span>
 
                 <!-- Field 6 -->
-                <label for="">Numéro de téléphone </label>
+                <label for="telephone">Numéro de téléphone </label>
                 <input type="number" name="telephone" required>
                 <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $telephone_error?></span>
 
-                <!-- Field 5 -->
+                <!-- Field 7 -->
+                <label for="">Mot de passe </label>
+                <input type="password" name="password" required>
+                <span class="text-danger"><i class="bi bi-exclamation-circle"></i> <?= $password_error?></span>
+
+
+                <!-- Field 8 -->
+                <label for="">Confirmer le mot de passe </label>
+                <input type="password" name="confirme_password" required>
+                <?php 
+                    if ($error == true) {
+                        echo "<span class='text-danger'><i class='bi bi-exclamation-circle'></i> ";
+                        echo $confirme_password_error;
+                        echo "</span>";
+                    }
+                ?>
+
+
+
+                <!-- Field 9 -->
                 <label for="">Région</label>
                 <select name="region" id="region" required>
                     <option value="" disabled selected>Sélectionner la région</option>
@@ -113,7 +150,6 @@ $regions = [
                 <div class="w-100 d-flex justify-content-center mt-2">
                     <button class="btn btn-primary w-50" type="submit">Continuer</button>
                 </div>
-                
 
             </form>
         </div>
